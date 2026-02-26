@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Typography Tokens
+ * - text-heading: Use for headings and high-emphasis text.
+ * - text-body: Use for default paragraph and long-form reading text.
+ * - text-muted: Use for secondary metadata and supporting text.
+ * - list-body: Enforces semantic body text and muted markers to prevent ad-hoc list marker tone drift.
+ *
+ * Use semantic token classes instead of raw text-zinc-* utilities
+ * to keep typography color usage consistent across the portfolio.
+ */
+@layer utilities {
+  .text-body {
+    @apply text-zinc-700;
+  }
+
+  .text-muted {
+    @apply text-zinc-600;
+  }
+
+  .text-heading {
+    @apply text-zinc-950;
+  }
+
+  .list-body {
+    @apply text-body;
+  }
+
+  .list-body ::marker {
+    @apply text-muted;
+  }
+
+  .link-body {
+    @apply text-body underline decoration-zinc-300 underline-offset-4 hover:text-heading hover:decoration-zinc-500;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-zinc-200;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-white text-base leading-8 text-heading;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-heading;
+  }
+
+  p {
+    @apply text-body;
+  }
+
+  a {
+    @apply link-body;
+  }
+
+  a:focus-visible {
+    @apply rounded-sm outline-none ring-2 ring-zinc-400 ring-offset-2;
+  }
+
+  ul {
+    @apply text-body;
+  }
+
+  .mdx-content {
+    @apply text-body;
+  }
+
+  .mdx-content h2 {
+    @apply mt-8 mb-4 text-2xl font-semibold leading-tight text-heading;
+  }
+
+  .mdx-content h3 {
+    @apply mt-6 mb-3 text-xl font-medium leading-snug text-heading;
+  }
+
+  .mdx-content p {
+    @apply mb-4 max-w-none;
+  }
+
+  .mdx-content ul {
+    @apply list-body mb-4 list-disc space-y-4 pl-6;
+  }
+
+  .mdx-content strong {
+    @apply font-semibold text-heading;
+  }
+
+  .architecture-diagram {
+    @apply overflow-x-auto rounded-lg border border-zinc-200 bg-zinc-50 p-8 font-mono text-sm leading-8 text-body;
+  }
+}

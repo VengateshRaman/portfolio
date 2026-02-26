@@ -1,0 +1,52 @@
+export const metadata = {
+  title: "B2B Analytics Platform Re-Platforming",
+  description:
+    "How a domain-driven frontend re-platform improved delivery speed, accessibility, and enterprise retention.",
+};
+
+## Context
+
+A data-heavy analytics suite supported enterprise users with complex reporting workflows. The legacy frontend had become monolithic, making feature development slow and error-prone.
+
+The product roadmap required faster iteration, stronger accessibility, and maintainable architecture.
+
+## Challenges
+
+- New engineers faced steep onboarding due to dense module coupling.
+- Accessibility debt accumulated in key reporting and filter journeys.
+- Core features moved slowly from discovery to production.
+- Technical ownership boundaries were unclear between teams.
+
+## Architecture Decisions
+
+### 1) Domain decomposition
+
+Feature domains were separated with explicit ownership and API contracts. This made changes safer, easier to review, and less likely to introduce side effects.
+
+### 2) Semantic interaction model
+
+Reporting surfaces were rebuilt with semantic HTML and keyboard-first behavior as baseline expectations, improving usability and audit outcomes.
+
+### 3) Review and quality rubric
+
+Code review standards were formalized around accessibility, SSR compatibility, and performance impact before merge approval.
+
+### 4) Product observability alignment
+
+UI instrumentation was aligned to business outcomes so teams could connect frontend changes with activation, retention, and workflow efficiency.
+
+## Execution
+
+The re-platform was executed in bounded increments to avoid delivery stalls. Legacy routes were replaced behind controlled rollouts, with benchmark metrics tracked after each release.
+
+This phased strategy improved release confidence while architectural debt was retired.
+
+## Outcomes
+
+- Feature delivery lead time improved by **36%** year over year.
+- Accessibility audit score increased from **78 to 98**.
+- Enterprise account retention improved through faster reporting workflows.
+
+## Key Takeaway
+
+When architectural boundaries, accessibility rigor, and product metrics are connected, teams ship faster with more reliable outcomes.

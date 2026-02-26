@@ -1,0 +1,52 @@
+export const metadata = {
+  title: "Enterprise Commerce Modernization",
+  description:
+    "How a commerce platform modernization improved conversion, release confidence, and performance.",
+};
+
+## Context
+
+A multi-region commerce platform served millions of monthly sessions, but the frontend was fragmented across legacy patterns. Teams shipped slowly, and mobile checkout showed rising friction.
+
+The organization needed a frontend foundation that supported faster delivery without increasing risk.
+
+## Challenges
+
+- Mobile checkout flow had visible latency on critical interactions.
+- Shared UI patterns were duplicated, leading to behavioral drift across squads.
+- Regression risk increased as release frequency grew.
+- Accessibility quality varied between journeys and teams.
+
+## Architecture Decisions
+
+### 1) Server-first rendering baseline
+
+The platform moved to Next.js App Router with Server Components as the default model. This reduced client JavaScript and improved initial render performance on checkout routes.
+
+### 2) Typed interface boundaries
+
+We introduced strict TypeScript contracts between shared UI primitives and feature modules. This reduced integration ambiguity and prevented runtime mismatches during releases.
+
+### 3) Design system alignment
+
+Reusable semantic primitives were standardized for layout and content patterns. This gave squads a shared language and reduced repeated implementation work.
+
+### 4) Quality gates in delivery
+
+Route-level performance budgets and accessibility checks were integrated into CI to ensure regressions were caught before merge.
+
+## Execution
+
+The migration was staged route-by-route. High-value journeys were prioritized first, with observability instrumentation added before each rollout. This sequencing enabled impact tracking while controlling release risk.
+
+Cross-team reviews were framed around architecture consistency, accessibility acceptance criteria, and runtime performance impact.
+
+## Outcomes
+
+- Checkout completion improved by **18%** in two quarters.
+- Release regression rate decreased by **42%** after standardization.
+- First-contentful paint improved by **31%** on high-traffic routes.
+
+## Key Takeaway
+
+Frontend scale came from disciplined constraints: server-first defaults, strict contracts, and shared quality gates. The result was faster delivery with higher release confidence.
